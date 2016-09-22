@@ -65,7 +65,7 @@ def select_initial_step(fun, a, b, ya, fa, order, rtol, atol):
     if d1 <= 1e-15 and d2 <= 1e-15:
         h1 = max(1e-6, h0 * 1e-3)
     else:
-        h1 = (0.01 / max(d1, d2)) ** (1 / order)
+        h1 = (0.01 / max(d1, d2)) ** (1 / (order + 1))
 
     return min(100 * h0, h1)
 

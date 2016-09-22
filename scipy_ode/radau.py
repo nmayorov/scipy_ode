@@ -124,7 +124,7 @@ class Radau(OdeSolver):
         self.newton_tol = max(10 * EPS / rtol, min(0.03, rtol ** 0.5))
 
         if step_size is None:
-            step_size = select_initial_step(self.fun, self.t, t_crit, self.y, self.f, 5, rtol, atol)
+            step_size = select_initial_step(self.fun, self.t, t_crit, self.y, self.f, 4, rtol, atol)
         self.step_size = min(step_size, max_step)
 
         self.LU_real = None
